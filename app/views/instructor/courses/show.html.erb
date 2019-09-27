@@ -121,15 +121,17 @@
       </div>
       <form accept-charset="UTF-8" action="#" class="simple_form new_lesson" enctype="multipart/form-data" id="newLessonForm" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="authenticity_token" type="hidden" value="cWn+DdJbIjqZajnzD956Ox4jjPXsnn7178AzOldv0XI=" /></div>
         <div class="modal-body">
-          <%= simple_form_for @lesson, url: instructor_lesson_path(section) do |f| %>
+          <%= simple_form_for @lesson, url: "#", html: {id: 'newLessonForm' } do |f| %>
             <%= f.input :title %>
             <%= f.input :subtitle %>
             <%= f.input :video %>
         </div>
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <%= f.submit "Add the lesson", class: 'btn btn-primary' %>
         </div>
+        <% end %>
     </div>
   </div>
 </div>
